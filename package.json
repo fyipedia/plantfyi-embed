@@ -1,0 +1,42 @@
+{
+  "name": "plantfyi-embed",
+  "version": "1.0.0",
+  "description": "Embed PlantFYI botany widgets — plant cards, hardiness zones, bloom calendars, gardening data. Zero dependencies, Shadow DOM, 4 themes.",
+  "main": "dist/embed.min.js",
+  "module": "dist/embed.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "plant",
+    "botany",
+    "hardiness-zone",
+    "bloom",
+    "gardening",
+    "USDA",
+    "embed",
+    "widget",
+    "plantfyi",
+    "plantfyi.com",
+    "shadow-dom",
+    "zero-dependencies",
+    "fyipedia",
+    "naturefyi"
+  ],
+  "homepage": "https://widget.plantfyi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyipedia/plantfyi-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/fyipedia/plantfyi-embed/issues"
+  },
+  "license": "MIT",
+  "author": "FYIPedia <dev@fyipedia.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}
