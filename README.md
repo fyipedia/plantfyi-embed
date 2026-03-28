@@ -44,7 +44,7 @@ That's it. The widget fetches data from the PlantFYI API and renders with full s
 | `data-plantfyi` | entity, compare, glossary, guide, search, [tools] | required | Widget type |
 | `data-slug` | e.g. "plants" | — | Entity slug from the PlantFYI database |
 | `data-theme` | light, dark, sepia, auto | light | Visual theme (`auto` follows OS preference) |
-| `data-style` | modern, organic | modern | Widget design style |
+| `data-styleVariant` | modern, organic | modern | Widget design style |
 | `data-size` | default, compact, large | default | Widget size |
 | `data-placeholder` | any string | "Search Plants..." | Search box placeholder |
 
@@ -68,10 +68,10 @@ That's it. The widget fetches data from the PlantFYI API and renders with full s
 
 ```html
 <!-- Modern (default) — clean lines, rounded corners, accent gradients -->
-<div data-plantfyi="entity" data-slug="plants" data-style="modern"></div>
+<div data-plantfyi="entity" data-slug="plants" data-styleVariant="modern"></div>
 
 <!-- Organic — natural curves, earth-tone aesthetics, field-guide look -->
-<div data-plantfyi="entity" data-slug="plants" data-style="organic"></div>
+<div data-plantfyi="entity" data-slug="plants" data-styleVariant="organic"></div>
 ```
 
 ## Web Components (Custom Elements)
