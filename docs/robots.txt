@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# PlantFYI Embed Widget
+# Main site: https://plantfyi.com
+# Widget docs: https://widget.plantfyi.com
+# npm: https://www.npmjs.com/package/plantfyi-embed
