@@ -1,21 +1,52 @@
 # PlantFYI Embed Widget
 
-> Embeddable PlantFYI widgets for any website. Zero dependencies, Shadow DOM isolation, 4 themes (light/dark/sepia/auto).
+> 379,774 plants, taxonomy. Embeddable widgets for any website. Zero dependencies, Shadow DOM isolation.
 
 ## Quick Start
 
-Add to any HTML page:
-- Script: <script src="https://cdn.jsdelivr.net/npm/plantfyi-embed@1/dist/embed.min.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/plantfyi-embed@1/dist/embed.min.js"></script>
+<div data-plantfyi="iucn-badge" data-slug="example"></div>
+```
+
+## Available Widget Types (8)
+
+- entity: `data-plantfyi="entity"`
+- glossary: `data-plantfyi="glossary"`
+- guide: `data-plantfyi="guide"`
+- compare: `data-plantfyi="compare"`
+- search: `data-plantfyi="search"`
+- iucn-badge (interactive): `data-plantfyi="iucn-badge"`
+- hardiness-zone (interactive): `data-plantfyi="hardiness-zone"`
+- bloom-calendar (interactive): `data-plantfyi="bloom-calendar"`
+
+## Customization
+
+- **Themes**: light, dark, sepia, auto (follows system preference)
+- **Sizes**: compact (280px), default (420px), large (720px)
+- **Styles**: modern, classic
+
+```html
+<div data-plantfyi="iucn-badge" data-slug="example"
+     data-theme="auto" data-size="compact" data-style-variant="modern"></div>
+```
+
+## Integration Methods
+
+1. **Script tag** (recommended): `<script src="https://cdn.jsdelivr.net/npm/plantfyi-embed@1/dist/embed.min.js"></script>`
+2. **iframe**: `https://plantfyi.com/iframe/entity/{slug}/`
+3. **oEmbed**: `https://plantfyi.com/oembed?url={page_url}&format=json`
+4. **Badge**: `https://plantfyi.com/badge/site.svg`
 
 ## Links
 
 - Main site: https://plantfyi.com
 - Widget docs: https://widget.plantfyi.com
-- npm: https://www.npmjs.com/package/plantfyi-embed
+- API documentation: https://plantfyi.com/developers/
+- npm package: https://www.npmjs.com/package/plantfyi-embed
 - GitHub: https://github.com/fyipedia/plantfyi-embed
-- API: https://plantfyi.com/developers/
 
-## Nature FYI Widget Family
+## Nature FYI Widget Network
 
 - [SpeciesFYI Widget](https://widget.speciesfyi.com)
 - [BirdFYI Widget](https://widget.birdfyi.com)
