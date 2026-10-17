@@ -825,7 +825,7 @@ function renderError(container, message, config) {
   container.innerHTML = `
     <div class="naturefyi-error">
       <p>${message}</p>
-      <a href="https://${config.domain}" target="_blank" rel="noopener">
+      <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">
         Visit ${config.name}
       </a>
     </div>
@@ -833,7 +833,7 @@ function renderError(container, message, config) {
 }
 var externalLinkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 function poweredByHTML(config) {
-  return `<span class="naturefyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="noopener">${config.name}</a></span>`;
+  return `<span class="naturefyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">${config.name}</a></span>`;
 }
 
 // src/api.ts
@@ -897,7 +897,7 @@ function pills(items) {
   return `<div class="naturefyi-pills">${items.map((i) => `<span class="naturefyi-pill">${esc(i)}</span>`).join("")}</div>`;
 }
 function viewLink(url, label, config) {
-  return `<a href="${esc(url)}" target="_blank" rel="noopener" class="naturefyi-view-link" style="color:${config.accent}">${esc(label)} \u2197</a>`;
+  return `<a href="${esc(url)}" target="_blank" rel="nofollow noopener" class="naturefyi-view-link" style="color:${config.accent}">${esc(label)} \u2197</a>`;
 }
 function badge(text, bg, fg = "#fff") {
   return `<span class="naturefyi-badge" style="background:${bg};color:${fg}">${esc(text)}</span>`;
@@ -1047,7 +1047,7 @@ function renderBirdCard(data, config) {
       ${geoItems.length > 0 ? `<div style="margin:6px 0;">${pills(geoItems)}</div>` : ""}
 
       ${xenoCantoId ? `<div style="margin:6px 0;">
-            <a href="https://xeno-canto.org/${esc(xenoCantoId)}" target="_blank" rel="noopener"
+            <a href="https://xeno-canto.org/${esc(xenoCantoId)}" target="_blank" rel="nofollow noopener"
                class="naturefyi-view-link" style="color:${config.accent};font-size:0.85rem;">
               \u{1F50A} Listen on Xeno-canto \u2197
             </a>
@@ -1484,7 +1484,7 @@ function initEntityWidget(el, config) {
           html = `
               <div class="naturefyi-entity-fallback">
                 <div style="font-size:1rem;font-weight:600;margin-bottom:8px;">${escapeHTML(name)}</div>
-                <a href="${escapeHTML(entityUrl)}" target="_blank" rel="noopener"
+                <a href="${escapeHTML(entityUrl)}" target="_blank" rel="nofollow noopener"
                    class="naturefyi-view-link" style="color:${config.accent}">
                   View on ${escapeHTML(config.name)} \u2197
                 </a>
@@ -1521,7 +1521,7 @@ function initCompareWidget(el, config) {
         <div style="font-size:0.9rem;color:#64748b;margin-bottom:8px;">
           Comparison not available for fish. Try the compatibility checker at ${escapeHTML2(config.domain)}
         </div>
-        <a class="naturefyi-view-link" href="${escapeHTML2(siteUrl)}" target="_blank" rel="noopener"
+        <a class="naturefyi-view-link" href="${escapeHTML2(siteUrl)}" target="_blank" rel="nofollow noopener"
            style="color:${config.accent}">
           View on ${escapeHTML2(config.name)} ${externalLinkIcon}
         </a>
@@ -1534,7 +1534,7 @@ function initCompareWidget(el, config) {
     container.innerHTML = `
       <div class="naturefyi-error">
         <p>Missing data-slug attribute.</p>
-        <a href="https://${config.domain}" target="_blank" rel="noopener">Visit ${escapeHTML2(config.name)}</a>
+        <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">Visit ${escapeHTML2(config.name)}</a>
       </div>
     `;
     return;
@@ -1567,11 +1567,11 @@ function initCompareWidget(el, config) {
                 <tr>
                   <th style="text-align:left;padding:6px 8px;border-bottom:2px solid ${config.accent};color:#64748b;font-weight:600;width:35%;">Property</th>
                   <th style="text-align:left;padding:6px 8px;border-bottom:2px solid ${config.accent};font-weight:600;width:32.5%;">
-                    <a href="${escapeHTML2(urlA)}" target="_blank" rel="noopener"
+                    <a href="${escapeHTML2(urlA)}" target="_blank" rel="nofollow noopener"
                        style="color:${config.accent};text-decoration:none;">${escapeHTML2(nameA)} \u2197</a>
                   </th>
                   <th style="text-align:left;padding:6px 8px;border-bottom:2px solid ${config.accent};font-weight:600;width:32.5%;">
-                    <a href="${escapeHTML2(urlB)}" target="_blank" rel="noopener"
+                    <a href="${escapeHTML2(urlB)}" target="_blank" rel="nofollow noopener"
                        style="color:${config.accent};text-decoration:none;">${escapeHTML2(nameB)} \u2197</a>
                   </th>
                 </tr>
@@ -1597,7 +1597,7 @@ function initCompareWidget(el, config) {
                </div>` : ""}
 
           <div class="naturefyi-actions" style="margin-top:10px;">
-            <a class="naturefyi-view-link" href="${escapeHTML2(compareUrl)}" target="_blank" rel="noopener"
+            <a class="naturefyi-view-link" href="${escapeHTML2(compareUrl)}" target="_blank" rel="nofollow noopener"
                style="color:${config.accent}">
               Full comparison on ${escapeHTML2(config.name)} ${externalLinkIcon}
             </a>
@@ -1612,7 +1612,7 @@ function initCompareWidget(el, config) {
           <div style="font-size:0.9rem;color:#64748b;margin-bottom:8px;">
             Comparison not available via API. View on ${escapeHTML2(config.name)}.
           </div>
-          <a class="naturefyi-view-link" href="${escapeHTML2(siteUrl)}" target="_blank" rel="noopener"
+          <a class="naturefyi-view-link" href="${escapeHTML2(siteUrl)}" target="_blank" rel="nofollow noopener"
              style="color:${config.accent}">
             Visit ${escapeHTML2(config.name)} ${externalLinkIcon}
           </a>
@@ -1680,7 +1680,7 @@ function renderGlossary(container, data, config) {
   const relatedPills = data.related_terms && data.related_terms.length > 0 ? data.related_terms.map(
     (rt) => `<a class="naturefyi-pill naturefyi-pill--link"
                   href="https://${config.domain}/glossary/${escapeHTML3(rt.slug)}/"
-                  target="_blank" rel="noopener">${escapeHTML3(rt.name)}</a>`
+                  target="_blank" rel="nofollow noopener">${escapeHTML3(rt.name)}</a>`
   ).join("") : "";
   container.innerHTML = `
     <div class="naturefyi-glossary-card">
@@ -1704,11 +1704,11 @@ function renderGlossary(container, data, config) {
            </div>` : ""}
 
       <div class="naturefyi-actions" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;">
-        <a class="naturefyi-view-link" href="${termUrl}" target="_blank" rel="noopener"
+        <a class="naturefyi-view-link" href="${termUrl}" target="_blank" rel="nofollow noopener"
            style="color:${config.accent}">
           ${escapeHTML3(name)} ${externalLinkIcon}
         </a>
-        <a class="naturefyi-view-link" href="${glossaryUrl}" target="_blank" rel="noopener"
+        <a class="naturefyi-view-link" href="${glossaryUrl}" target="_blank" rel="nofollow noopener"
            style="color:${config.accent}">
           Full glossary on ${escapeHTML3(config.name)} ${externalLinkIcon}
         </a>
@@ -1802,7 +1802,7 @@ function initGuideWidget(el, config) {
                </div>` : ""}
 
           <div class="naturefyi-actions" style="margin-top:10px;">
-            <a class="naturefyi-view-link" href="${escapeHTML4(guideUrl)}" target="_blank" rel="noopener"
+            <a class="naturefyi-view-link" href="${escapeHTML4(guideUrl)}" target="_blank" rel="nofollow noopener"
                style="color:${config.accent}">
               Read guide on ${escapeHTML4(config.name)} ${externalLinkIcon}
             </a>
@@ -1927,7 +1927,7 @@ function initSearchWidget(el, config) {
           class="naturefyi-search-result-item"
           href="${escapeHTML5(href)}"
           target="_blank"
-          rel="noopener"
+          rel="nofollow noopener"
           role="option"
           tabindex="-1"
           style="display:block;padding:8px 14px;text-decoration:none;color:inherit;border-bottom:1px solid #f1f5f9;transition:background 0.1s;"
